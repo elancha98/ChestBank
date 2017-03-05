@@ -3,7 +3,6 @@ package me.commandcraft.chestbank;
 import java.io.IOException;
 
 import org.bukkit.Bukkit;
-import org.bukkit.World;
 import org.bukkit.event.Listener;
 import org.bukkit.plugin.RegisteredServiceProvider;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -33,12 +32,6 @@ public class ChestBank extends JavaPlugin {
 			return;
 		}
 		this.getCommand("chestbank").setExecutor(new CommandExec());
-		
-		permission.groupAdd((World)null, "b", "c");
-		
-		for (String group : permission.getGroups()) {
-			Bukkit.getLogger().info(group);
-		}
 	}
 	
 	public void onDisable() {

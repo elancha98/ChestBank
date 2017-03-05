@@ -43,7 +43,7 @@ public class CommandExec implements CommandExecutor {
 			Player p = (Player) sender;
 			if (ChestBank.getBankManager().hasBank(args[1])) {
 				Location loc = Utils.getTarget(p);
-				if (loc.getBlock().getType().equals(Material.CHEST) || loc
+				if (!loc.getBlock().getType().equals(Material.CHEST) && !loc
 						.getBlock().getType().equals(Material.TRAPPED_CHEST)) {
 					p.sendMessage(ChatColor.RED + "That's not a chest");
 					return false;
